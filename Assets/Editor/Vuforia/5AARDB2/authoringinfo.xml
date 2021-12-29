@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARInfo>
+<TargetSet version="28.0" toolVersion="10.2.5">
+<ModelTarget name="ticketmachine" targetId="0ddea4812641481aa8d1c6a83b615430" version="14.0" toolVersion="10.2.5" bbox="-0.569037 -0.000879 -0.302505 0.508153 1.800886 0.371948" previewImage="0ddea4812641481aa8d1c6a83b615430_preview.jpg"/>
+<ModelTarget name="metrosign" targetId="b698de17f5d94444ac0819d91aa3e7f6" version="14.0" toolVersion="10.2.5" bbox="-0.008739 -0.000977 -0.065952 0.092873 2.000977 1.027187" previewImage="b698de17f5d94444ac0819d91aa3e7f6_preview.jpg"/>
+<ModelTarget name="turnstile" targetId="cceb50165ab54141b97c2cfc47491d3d" version="14.0" toolVersion="10.2.5" bbox="-0.135303 -0.000513 -0.439164 0.165301 1.050576 0.460084" previewImage="cceb50165ab54141b97c2cfc47491d3d_preview.jpg"/>
+<ModelTarget name="turnstile_exit" targetId="c11b0ad93d7241e7b9bfcc9fb734dac3" version="14.0" toolVersion="10.2.5" bbox="-0.135303 -0.000513 -0.439164 0.165301 1.050576 0.460084" previewImage="c11b0ad93d7241e7b9bfcc9fb734dac3_preview.jpg"/>
+<ModelTarget name="metrosign_exit" targetId="662cd2c8586d487e90397fb1e4f4bd58" version="14.0" toolVersion="10.2.5" bbox="-0.008739 -0.000977 -0.065952 0.092873 2.000977 1.027187" previewImage="662cd2c8586d487e90397fb1e4f4bd58_preview.jpg"/>
+
+</TargetSet>
+
+<Assembly name="ticketmachines_assembly" assemblyId="ed3f73868d484a66933f5a549b34b59c">
+<Part name="ticketmachine" translation="0 0 0" rotation="AD: 0 0 1 0"/>
+<EntryPoint name="viewpoint_0001" translation="-0.02946 0.897608 4.10161" rotation="AD: 0.999999999990987 0.0003038417796293289 -0.013978084153662241 182.49" image="ticketmachine_viewpoint_0001.png" trained="yes">
+
+</EntryPoint>
+
+</Assembly>
+<Assembly name="metrosigns_assembly" assemblyId="c0b8b6953467413cbe789e6565245d9f">
+<Part name="metrosign" translation="0 0 0" rotation="AD: 0 0 1 0"/>
+<EntryPoint name="viewpoint_0001" translation="-0.480477 0.998933 4.64429" rotation="AD: 0.9999754596913869 -0.009924341944641433 0.9967034787579102 180.808" image="metrosign_viewpoint_0001.png" trained="yes">
+
+</EntryPoint>
+
+</Assembly>
+<Assembly name="turnstiles_assembly" assemblyId="ab248cf8dacd4625acafebefb6b495e0">
+<Part name="turnstile" translation="0 0 0" rotation="AD: 0 0 1 0"/>
+<EntryPoint name="viewpoint_0001" translation="0.0731121 0.422089 2.5378" rotation="AD: 0.9999999999972389 0.0005835567246919816 -0.004068192214267166 196.326" image="turnstile_viewpoint_0001.png" trained="yes">
+
+</EntryPoint>
+
+</Assembly>
+<Assembly name="turnstile_exits_assembly" assemblyId="829de00bd87a423fb66ed54b2eec659f">
+<Part name="turnstile_exit" translation="0 0 0" rotation="AD: 0 0 1 0"/>
+<EntryPoint name="viewpoint_0001" translation="0.0167704 0.474641 3.24775" rotation="AD: 0.9999977859442177 0.02168766296451087 -0.09978595305094332 204.401" image="turnstile_exit_viewpoint_0001.png" trained="yes">
+
+</EntryPoint>
+
+</Assembly>
+<Assembly name="metrosign_exits_assembly" assemblyId="135a3411a4624537a5516205e0b0ea62">
+<Part name="metrosign_exit" translation="0 0 0" rotation="AD: 0 0 1 0"/>
+<EntryPoint name="viewpoint_0001" translation="0.421158 0.983854 5.02386" rotation="AD: 0.9999716490663245 0.016099363277524578 -0.52946844054033 183.078" image="metrosign_exit_viewpoint_0001.png" trained="yes">
+
+</EntryPoint>
+
+</Assembly>
+<ModelTargetDatabase mtDBid="5e855f8ba8ab4ca7b72ce9040d25acf1" name="5AARDB2" toolVersion="13.0" version="13.0">
+    <RecognitionResult assemblyId="135a3411a4624537a5516205e0b0ea62" assemblyName="metrosign_exit" entryPoint="viewpoint_0001" />
+    <RecognitionResult assemblyId="829de00bd87a423fb66ed54b2eec659f" assemblyName="turnstile_exit" entryPoint="viewpoint_0001" />
+    <RecognitionResult assemblyId="ab248cf8dacd4625acafebefb6b495e0" assemblyName="turnstile" entryPoint="viewpoint_0001" />
+    <RecognitionResult assemblyId="c0b8b6953467413cbe789e6565245d9f" assemblyName="metrosign" entryPoint="viewpoint_0001" />
+    <RecognitionResult assemblyId="ed3f73868d484a66933f5a549b34b59c" assemblyName="ticketmachine" entryPoint="viewpoint_0001" />
+</ModelTargetDatabase>
+
+</QCARInfo>

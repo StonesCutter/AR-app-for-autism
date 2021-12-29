@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+<Tracking>
+<ModelTarget name="ticketmachine" motionHint="static" trackingMode="default"/>
+<ModelTarget name="metrosign" motionHint="static" trackingMode="default"/>
+<ModelTarget name="turnstile" motionHint="static" trackingMode="default"/>
+<ModelTarget name="turnstile_exit" motionHint="static" trackingMode="default"/>
+<ModelTarget name="metrosign_exit" motionHint="static" trackingMode="default"/>
+
+</Tracking>
+
+<Assembly name="ticketmachines_assembly" assemblyId="ed3f73868d484a66933f5a549b34b59c">
+<Part name="ticketmachine" translation="0 0 0" rotation="AD: 0 0 1 0"/>
+<EntryPoint name="viewpoint_0001" translation="-0.02946 0.897608 4.10161" rotation="AD: 0.999999999990987 0.0003038417796293289 -0.013978084153662241 182.49" trained="yes">
+
+</EntryPoint>
+
+</Assembly>
+<Assembly name="metrosigns_assembly" assemblyId="c0b8b6953467413cbe789e6565245d9f">
+<Part name="metrosign" translation="0 0 0" rotation="AD: 0 0 1 0"/>
+<EntryPoint name="viewpoint_0001" translation="-0.480477 0.998933 4.64429" rotation="AD: 0.9999754596913869 -0.009924341944641433 0.9967034787579102 180.808" trained="yes">
+
+</EntryPoint>
+
+</Assembly>
+<Assembly name="turnstiles_assembly" assemblyId="ab248cf8dacd4625acafebefb6b495e0">
+<Part name="turnstile" translation="0 0 0" rotation="AD: 0 0 1 0"/>
+<EntryPoint name="viewpoint_0002" translation="0.129372 0.406706 3.09754" rotation="AD: 0.9999980346443211 0.01964357639948498 -0.10328424325715492 201.422" trained="yes">
+
+</EntryPoint>
+
+</Assembly>
+<Assembly name="turnstile_exits_assembly" assemblyId="829de00bd87a423fb66ed54b2eec659f">
+<Part name="turnstile_exit" translation="0 0 0" rotation="AD: 0 0 1 0"/>
+<EntryPoint name="viewpoint_0001" translation="0.0167704 0.474641 3.24775" rotation="AD: 0.9999977859442177 0.021687662964510957 -0.09978595305094377 204.401" trained="yes">
+
+</EntryPoint>
+
+</Assembly>
+<Assembly name="metrosign_exits_assembly" assemblyId="135a3411a4624537a5516205e0b0ea62">
+<Part name="metrosign_exit" translation="0 0 0" rotation="AD: 0 0 1 0"/>
+<EntryPoint name="viewpoint_0001" translation="0.421158 0.983854 5.02386" rotation="AD: 0.9999716490663245 0.016099363277524578 -0.52946844054033 183.078" trained="yes">
+
+</EntryPoint>
+
+</Assembly>
+<ModelTargetDatabase name="5AARDB3" />
+</QCARConfig>

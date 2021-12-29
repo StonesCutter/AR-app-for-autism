@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARInfo>
+<TargetSet version="14.0" toolVersion="10.2.5">
+<ModelTarget name="ticketmachine" targetId="0ddea4812641481aa8d1c6a83b615430" version="14.0" toolVersion="10.2.5" bbox="-0.569037 -0.000879 -0.302505 0.508153 1.800886 0.371948" previewImage="0ddea4812641481aa8d1c6a83b615430_preview.jpg"/>
+
+</TargetSet>
+
+<Assembly name="ticketmachines_assembly" assemblyId="ed3f73868d484a66933f5a549b34b59c">
+<Part name="ticketmachine" translation="0 0 0" rotation="AD: 0 0 1 0"/>
+<EntryPoint name="viewpoint_0001" translation="-0.02946 0.897608 4.10161" rotation="AD: 0.999999999990987 0.0003038417796293289 -0.013978084153662241 182.49" image="ticketmachine_viewpoint_0001.png" trained="no">
+
+</EntryPoint>
+
+</Assembly>
+
+</QCARInfo>

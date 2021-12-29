@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+<Tracking>
+<ModelTarget name="ticketmachine" motionHint="static" trackingMode="default"/>
+
+</Tracking>
+
+<Assembly name="ticketmachines_assembly" assemblyId="ed3f73868d484a66933f5a549b34b59c">
+<Part name="ticketmachine" translation="0 0 0" rotation="AD: 0 0 1 0"/>
+<EntryPoint name="viewpoint_0001" translation="-0.02946 0.897608 4.10161" rotation="AD: 0.999999999990987 0.0003038417796293289 -0.013978084153662241 182.49" trained="no">
+
+</EntryPoint>
+
+</Assembly>
+
+</QCARConfig>
