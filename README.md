@@ -1,2 +1,2 @@
 # 5AARCA-Demo-madness
- No Parniya , No Party!!
+ No Parniya , No Party!
