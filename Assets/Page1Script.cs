@@ -26,6 +26,8 @@ public class Page1Script : MonoBehaviour
         return stringaName;
     }
 
+    //Prova
+
 
 
 }
