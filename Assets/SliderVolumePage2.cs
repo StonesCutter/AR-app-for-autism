@@ -9,6 +9,7 @@ public class SliderVolumePage2 : MonoBehaviour
     [SerializeField] private Slider _slider;
     [SerializeField] private TextMeshProUGUI _sliderText;
     public float Volume;
+    public bool Chosen = false;
     private HelloWorld TSPC;
 
 
@@ -17,8 +18,9 @@ public class SliderVolumePage2 : MonoBehaviour
         TSPC = GameObject.FindObjectOfType<HelloWorld>();
         _slider.onValueChanged.AddListener((v) =>
         {
-            _sliderText.text = v.ToString("3");
+           // _sliderText.text = v.ToString("3");
         });
+        Chosen = false;
     }
 
 
@@ -35,27 +37,32 @@ public class SliderVolumePage2 : MonoBehaviour
         if(_sliderText.text == "0"){
             // Volume = 0.0f;
             TSPC.SetVolume0();
+            Chosen = true;
 
         }
 
         if(_sliderText.text == "1"){
             //Volume = 0.25f;
             TSPC.SetVolume1();
+            Chosen = true;
         }
 
         if(_sliderText.text == "2"){
             //Volume = 0.5f;
             TSPC.SetVolume2();
+            Chosen = true;
         }
 
         if(_sliderText.text == "3"){
             //Volume = 0.75f;
             TSPC.SetVolume3();
+            Chosen = true;
         }
 
         if(_sliderText.text == "4"){
             //Volume = 1.0f;
             TSPC.SetVolume4();
+            Chosen = true;
         }
 
         //TSPC.SetVolume(Volume);
@@ -66,5 +73,10 @@ public class SliderVolumePage2 : MonoBehaviour
 
     public float Volume1(){
         return Volume;
+    }
+
+    public bool VolumeHasBeenChosen()
+    {
+        return Chosen;
     }
 }

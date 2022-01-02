@@ -38,6 +38,10 @@ public class HelloWorld : MonoBehaviour
     private SpeechConfig speechConfig;
     private SpeechSynthesizer synthesizer;
 
+    float timer = 0f; 
+    public bool VolumeChosen = false;
+
+
     public void ButtonClick()
     {
 
@@ -76,11 +80,11 @@ public class HelloWorld : MonoBehaviour
                 audioSource.volume = 0.0f;
             }
 
-            if(muteUnmute == true)
+            if (muteUnmute == true)
             {
                 audioSource.mute = true;
             }
-            if(muteUnmute == false)
+            if (muteUnmute == false)
             {
                 audioSource.mute = false;
             }
@@ -95,19 +99,19 @@ public class HelloWorld : MonoBehaviour
             var sampleCount = result.AudioData.Length / 2;
             //var sampleCount = textValue.Length;
             var audioData = new float[sampleCount];
-                for (var i = 0; i < sampleCount; ++i)
-                {
-                    audioData[i] = (short)(result.AudioData[i * 2 + 1] << 8 | result.AudioData[i * 2]) / 32768.0F;
-                }
+            for (var i = 0; i < sampleCount; ++i)
+            {
+                audioData[i] = (short)(result.AudioData[i * 2 + 1] << 8 | result.AudioData[i * 2]) / 32768.0F;
+            }
 
-           // audioSource.volume = 0.75f;
+            // audioSource.volume = 0.75f;
             // The output audio format is 16K 16bit mono
             var audioClip = AudioClip.Create("SynthesizedAudio", sampleCount, 1, 16000, false);
-                audioClip.SetData(audioData, 0);
-                audioSource.clip = audioClip;
-                audioSource.Play();
+            audioClip.SetData(audioData, 0);
+            audioSource.clip = audioClip;
+            audioSource.Play();
 
-                newMessage = "Speech synthesis succeeded!";
+            newMessage = "Speech synthesis succeeded!";
             //}
             /*else if (result.Reason == ResultReason.Canceled)
             {
@@ -116,11 +120,11 @@ public class HelloWorld : MonoBehaviour
             }*/
         }
 
-      /*  lock (threadLocker)
-        {
-            message = newMessage;
-            waitingForSpeak = false;
-        }*/
+        /*  lock (threadLocker)
+          {
+              message = newMessage;
+              waitingForSpeak = false;
+          }*/
     }
 
     void Start()
@@ -152,26 +156,32 @@ public class HelloWorld : MonoBehaviour
         // Continue with normal initialization, Text, InputField and Button objects are present.
         // inputField.text = "Enter text you wish spoken here.";
         message = "Click button to synthesize speech";
-            //speakButton.onClick.AddListener(ButtonClick);
+        //speakButton.onClick.AddListener(ButtonClick);
 
 
-            // Creates an instance of a speech config with specified subscription key and service region.
-            // Replace with your own subscription key and service region (e.g., "westus").
-            speechConfig = SpeechConfig.FromSubscription("8db17ebaef2b4b34b874ade5ccb4a3d4", "westeurope");
+        // Creates an instance of a speech config with specified subscription key and service region.
+        // Replace with your own subscription key and service region (e.g., "westus").
+        speechConfig = SpeechConfig.FromSubscription("8db17ebaef2b4b34b874ade5ccb4a3d4", "westeurope");
 
-            // The default format is Riff16Khz16BitMonoPcm.
-            // We are playing the audio in memory as audio clip, which doesn't require riff header.
-            // So we need to set the format to Raw16Khz16BitMonoPcm.
-            speechConfig.SetSpeechSynthesisOutputFormat(SpeechSynthesisOutputFormat.Raw16Khz16BitMonoPcm);
+        // The default format is Riff16Khz16BitMonoPcm.
+        // We are playing the audio in memory as audio clip, which doesn't require riff header.
+        // So we need to set the format to Raw16Khz16BitMonoPcm.
+        speechConfig.SetSpeechSynthesisOutputFormat(SpeechSynthesisOutputFormat.Raw16Khz16BitMonoPcm);
 
-            // Creates a speech synthesizer.
-            // Make sure to dispose the synthesizer after use!
-            synthesizer = new SpeechSynthesizer(speechConfig, null);
+        // Creates a speech synthesizer.
+        // Make sure to dispose the synthesizer after use!
+        synthesizer = new SpeechSynthesizer(speechConfig, null);
         //}
     }
 
     void Update()
     {
+
+        timer += Time.deltaTime;
+        if (VolumeChosen == false && timer > 3)
+        {
+            canary = 3;
+        }
         //lock (threadLocker)
         //{
         textValue = IR.PassPhrase();
@@ -183,24 +193,24 @@ public class HelloWorld : MonoBehaviour
         //if (outputText != null)
         //{
         Debug.Log("MESSAGE --->" + textValue);
-       // Debug.Log("CANARY --->" + canary);
+        // Debug.Log("CANARY --->" + canary);
         //   outputText.text = message;
         // IR = GameObject.FindObjectOfType<IntentRecognition>();
         //textValue = IR.PassPhrase();
         //}
-       /* if (isStart = true)
-        {
-            textValue = "Hello, ARE YOU RETARDED OR WHAT?";
-                isStart = false;
-        }*/
+        /* if (isStart = true)
+         {
+             textValue = "Hello, ARE YOU RETARDED OR WHAT?";
+                 isStart = false;
+         }*/
         if (messageConfront != textValue)
-            {
+        {
             Debug.Log("SONO ENTRTO PERLAMADONNAAAAAAAAAAAAAAAAAAAA>");
             ButtonClick();
-                messageConfront = textValue;
-            }
+            messageConfront = textValue;
+        }
 
-       // }
+        // }
     }
 
     void OnDestroy()
@@ -233,21 +243,24 @@ public class HelloWorld : MonoBehaviour
     public void SetVolume1()
     {
         canary = 1;
+        VolumeChosen = true;
     }
 
     public void SetVolume2()
     {
-        canary = 2;
+        canary = 2; VolumeChosen = true;
     }
 
     public void SetVolume3()
     {
         canary = 3;
+        VolumeChosen = true;
     }
 
     public void SetVolume4()
     {
         canary = 4;
+        VolumeChosen = true;
     }
 
     public bool CaOnOff()
@@ -260,8 +273,8 @@ public class HelloWorld : MonoBehaviour
         {
             CaOn = false;
         }
-            return CaOn;
+        return CaOn;
     }
-    
+
 }
 // </code>
