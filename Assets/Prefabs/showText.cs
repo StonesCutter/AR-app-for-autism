@@ -384,7 +384,7 @@ public class showText : MonoBehaviour
                 statoTurnstiles = false;
             }
 
-            MSE = GameObject.FindObjectOfType<metroSignExit>();
+ /*           MSE = GameObject.FindObjectOfType<metroSignExit>();
             bool statoMetroSignExit = MSE.StatusMetroSignExit();
 
 
@@ -396,7 +396,7 @@ public class showText : MonoBehaviour
                 statoUscitaFinale = false;
             }
 
-
+*/
 
         }
 

@@ -23,7 +23,7 @@ public class SliderHelpPage2 : MonoBehaviour
         MIC = GameObject.FindObjectOfType<Events>();
         _slider.onValueChanged.AddListener((v) =>
         {
-            _sliderText.text = v.ToString("1");
+            _sliderText.text = v.ToString("3");
         });
     }
 
@@ -65,10 +65,11 @@ public class SliderHelpPage2 : MonoBehaviour
         }
 
 
-//        Debug.Log(Help);
+        Debug.Log(_sliderText.text);
     }
 
-    public int Help1(){
+    public int Help1()
+    {
         return Help;
     }
 

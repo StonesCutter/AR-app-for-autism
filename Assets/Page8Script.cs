@@ -25,13 +25,13 @@ public class Page8Script : MonoBehaviour
             buttonSubmit.gameObject.SetActive(false);
         }
         if(Differenza > 0 && End != 0 && Start != 0){
-            Direction = "You are going to Bignami";
+            Direction = "";
             VersoBignamii = true;
             textDirection.GetComponent<Text>().text = Direction;
             buttonSubmit.gameObject.SetActive(true);
         }
         if(Differenza < 0 && End != 0 && Start != 0){
-            Direction = "You are going to SanSiro";
+            Direction = "";
             VersoBignamii = false;
             textDirection.GetComponent<Text>().text = Direction;
             buttonSubmit.gameObject.SetActive(true);

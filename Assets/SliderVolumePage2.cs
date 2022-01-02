@@ -17,7 +17,7 @@ public class SliderVolumePage2 : MonoBehaviour
         TSPC = GameObject.FindObjectOfType<HelloWorld>();
         _slider.onValueChanged.AddListener((v) =>
         {
-            _sliderText.text = v.ToString("0");
+            _sliderText.text = v.ToString("3");
         });
     }
 
