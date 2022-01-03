@@ -13,6 +13,8 @@ public class ShowImages : MonoBehaviour
     public GameObject buttonTicket;
     public GameObject buttonOutMetro;
     public GameObject buttonInMetro;
+        public GameObject PanelScompare;
+
 
     // Start is called before the first frame update
     void Start()
@@ -80,5 +82,15 @@ public class ShowImages : MonoBehaviour
     {
         buttonInMetro.gameObject.SetActive(false);
     }
+
+        public void PanelAppare()
+        {
+            PanelScompare.gameObject.SetActive(true);
+        }
+
+        public void PanelScomparee()
+        {
+            PanelScompare.gameObject.SetActive(false);
+        }
 
 }

@@ -61,6 +61,10 @@ public class IntentRecognition : MonoBehaviour {
 
     /// <summary>
     /// //////////////////
+
+        float timerPanelScompare = 0f;
+        public GameObject PanelScompare;
+
     /// 
      bool passa = true;
     bool passa1 = true;
@@ -140,7 +144,7 @@ public class IntentRecognition : MonoBehaviour {
     private ScriptBinario1_Bignami B1B;
 
     private ScriptBinario2_SanSiro B2SS;
-    //se si va verso bignami come direzione la variabile versoBignami è true, se si va verso San Siro è false
+    //se si va verso bignami come direzione la variabile versoBignami ï¿½ true, se si va verso San Siro ï¿½ false
     public bool versoBignami = true;
 
     private PortaExtMetroScript PEM;
@@ -429,6 +433,7 @@ public class IntentRecognition : MonoBehaviour {
         }
 #endif
 
+
             // Used to update results on screen during updates
             timer += Time.deltaTime;
             rewardTimer += Time.deltaTime;
@@ -454,7 +459,7 @@ public class IntentRecognition : MonoBehaviour {
                     switch (actualTask)
                     {
                         case "intro":
-                            phraseToSay = "I am your personal assistant, i'm going to guide you through this experience. If you need assistance just say 'Help'. Now frame the metro sign with your phone. Can you see it?";
+                            phraseToSay = "I am your personal assistant, I'm going to guide you through this experience. If you need assistance just say 'Help'. Now frame the metro sign with your phone. Can you see it?";
                             actualTask = "metroSign";
                             timer = 0;
 
@@ -493,6 +498,7 @@ public class IntentRecognition : MonoBehaviour {
                                 RobotAngry.gameObject.SetActive(true);
                                 RobotHappy.gameObject.SetActive(false);
                                 RobotReward.gameObject.SetActive(false);
+                                MIMG.PanelScomparee();
 
                             }
                             else if (counter == 2)
@@ -515,6 +521,8 @@ public class IntentRecognition : MonoBehaviour {
                                 phraseToSay = "You have to find the stairs where there's written the station's name.";
                                 counter++;
                                 timer = 0;
+
+                                MIMG.PanelAppare();
 
                                 RobotNormal.gameObject.SetActive(true);
                                 RobotAngry.gameObject.SetActive(false);
@@ -1391,7 +1399,7 @@ public class IntentRecognition : MonoBehaviour {
     public void AutoPassNextTask()
     {
 
-        Debug.Log("TIMER DEMERDA ------->" + rewardTimer);
+        Debug.Log("TIMER ------->" + rewardTimer);
 
         MSS = GameObject.FindObjectOfType<metroSignScript>();
         bool statoMetroSign = MSS.StatusMetroSign();
@@ -1450,6 +1458,7 @@ public class IntentRecognition : MonoBehaviour {
                 RobotAngry.gameObject.SetActive(false);
                 RobotHappy.gameObject.SetActive(true);
                 RobotReward.gameObject.SetActive(false);
+
 
             }
 

@@ -205,7 +205,7 @@ public class HelloWorld : MonoBehaviour
          }*/
         if (messageConfront != textValue)
         {
-            Debug.Log("SONO ENTRTO PERLAMADONNAAAAAAAAAAAAAAAAAAAA>");
+            Debug.Log("SONO ENTRTO>");
             ButtonClick();
             messageConfront = textValue;
         }
