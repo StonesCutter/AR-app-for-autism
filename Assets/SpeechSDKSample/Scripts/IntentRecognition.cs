@@ -498,7 +498,7 @@ public class IntentRecognition : MonoBehaviour {
                                 RobotAngry.gameObject.SetActive(true);
                                 RobotHappy.gameObject.SetActive(false);
                                 RobotReward.gameObject.SetActive(false);
-                                MIMG.PanelScomparee();
+                                //MIMG.PanelScomparee();
 
                             }
                             else if (counter == 2)
@@ -522,7 +522,7 @@ public class IntentRecognition : MonoBehaviour {
                                 counter++;
                                 timer = 0;
 
-                                MIMG.PanelAppare();
+                               // MIMG.PanelAppare();
 
                                 RobotNormal.gameObject.SetActive(true);
                                 RobotAngry.gameObject.SetActive(false);
