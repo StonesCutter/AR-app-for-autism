@@ -232,7 +232,7 @@ public class HelloWorld : MonoBehaviour
         }
         if (!audioSource.isPlaying)
         {
-            if (timer - tempoBarra > 1 && contoschifo >= 2)
+            if (timer - tempoBarra > 1 && contoschifo >= 2 && IR.FinishFlag()==false)
             {
                 
                 RobotNormal1.gameObject.SetActive(true);

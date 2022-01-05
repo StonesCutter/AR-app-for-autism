@@ -58,6 +58,7 @@ public class IntentRecognition : MonoBehaviour {
     public bool tardFlag = false;
     public bool accendi = false;
     private PageHelpScript PHS;
+    public bool Finish = false;
 
     /// <summary>
     /// //////////////////
@@ -99,7 +100,11 @@ public class IntentRecognition : MonoBehaviour {
     public GameObject RobotAngry;
     public GameObject RobotHappy;
     public GameObject RobotNormal;
+    public GameObject RobotNormal1;
     public GameObject RobotReward;
+    public GameObject pageFinish;
+    public GameObject panel;
+    public GameObject panelUI;
 
     // -------------- Importing from all other scripts ------------------------\\
     public string textValue;
@@ -158,6 +163,8 @@ public class IntentRecognition : MonoBehaviour {
     private UscitaFinaleScript UFS;
 
     private metroSignExit MSE;
+
+    private HelloWorld HELL;
 
 
     //-------------------------------------------------------------------------------------------------------\\
@@ -422,6 +429,7 @@ public class IntentRecognition : MonoBehaviour {
     void Update() {
 
         MIMG = GameObject.FindObjectOfType<ShowImages>();
+        HELL = GameObject.FindObjectOfType<HelloWorld>();
 
 
         if (itsOn == true)
@@ -855,7 +863,7 @@ public class IntentRecognition : MonoBehaviour {
                             break;
 
                         case "endGame":
-                            if (counter == 0)
+                            if (counter == 0 && Finish!=true)
                             {
                                 MIMG.buttonMetroSignTrue();
                                 phraseToSay = "You have to find, like you did before, the red metro sign outside the station";
@@ -867,7 +875,7 @@ public class IntentRecognition : MonoBehaviour {
                                 RobotHappy.gameObject.SetActive(false);
                                 RobotReward.gameObject.SetActive(false);
                             }
-                            else if (counter > 0)
+                            else if (counter > 0 && Finish != true)
                             {
                                 MIMG.buttonMetroSignTrue();
                                 phraseToSay = "If you don't remember what looked like, look at me right now. Find this cartel";
@@ -1394,6 +1402,7 @@ public class IntentRecognition : MonoBehaviour {
     public void SetStart()
     {
          phraseToSay="hello! Do you know who i am?";
+        Finish = false;
     }
 
     public void AutoPassNextTask()
@@ -1854,12 +1863,21 @@ public class IntentRecognition : MonoBehaviour {
         {
             rewardTimer = 0;
             MIMG.buttonMetroSignFalse();
+
+            pageFinish.gameObject.SetActive(true);
+            panel.gameObject.SetActive(false);
+            panelUI.gameObject.SetActive(true);
+           // HELL.SetVolume0();
+            Finish = true;
             phraseToSay = MSE.StringaMetroSignExit();
             passa22 = false;
+
             RobotNormal.gameObject.SetActive(false);
+            RobotNormal1.gameObject.SetActive(false);
             RobotAngry.gameObject.SetActive(false);
-            RobotHappy.gameObject.SetActive(true);
+            RobotHappy.gameObject.SetActive(false);
             RobotReward.gameObject.SetActive(false);
+
         }
     }
 
@@ -1892,6 +1910,11 @@ public class IntentRecognition : MonoBehaviour {
         RobotAngry.gameObject.SetActive(false);
         RobotHappy.gameObject.SetActive(false);
         RobotReward.gameObject.SetActive(true);
+    }
+
+    public bool FinishFlag()
+    {
+        return Finish;
     }
 }
 
