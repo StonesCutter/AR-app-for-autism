@@ -18,14 +18,21 @@ public class HelloWorld : MonoBehaviour
     public Button speakButton;
     public AudioSource audioSource;
     private IntentRecognition IR;
+    private ShowImages MIMG;
     public int canary;
     public bool muteUnmute;
     public bool isStart = false;
+    int contoschifo = 0;
 
     public GameObject RobotAngry;
     public GameObject RobotHappy;
     public GameObject RobotNormal;
     public GameObject RobotReward;
+
+    public GameObject RobotAngry1;
+    public GameObject RobotHappy1;
+    public GameObject RobotNormal1;
+    public GameObject RobotReward1;
 
     public GameObject ButtonMicrophone;
     public bool CaOn = false;
@@ -38,7 +45,8 @@ public class HelloWorld : MonoBehaviour
     private SpeechConfig speechConfig;
     private SpeechSynthesizer synthesizer;
 
-    float timer = 0f; 
+    float timer = 0f;
+    float tempoBarra = 0f;
     public bool VolumeChosen = false;
 
 
@@ -49,7 +57,7 @@ public class HelloWorld : MonoBehaviour
          {
              waitingForSpeak = true;
           } */
-
+        contoschifo++;
         string newMessage = string.Empty;
 
         // Starts speech synthesis, and returns after a single utterance is synthesized.
@@ -109,8 +117,10 @@ public class HelloWorld : MonoBehaviour
             var audioClip = AudioClip.Create("SynthesizedAudio", sampleCount, 1, 16000, false);
             audioClip.SetData(audioData, 0);
             audioSource.clip = audioClip;
+            //MIMG.PanelAppare();
             audioSource.Play();
-
+          
+            //MIMG.PanelScomparee();
             newMessage = "Speech synthesis succeeded!";
             //}
             /*else if (result.Reason == ResultReason.Canceled)
@@ -176,7 +186,7 @@ public class HelloWorld : MonoBehaviour
 
     void Update()
     {
-
+        MIMG = GameObject.FindObjectOfType<ShowImages>();
         timer += Time.deltaTime;
         if (VolumeChosen == false && timer > 3)
         {
@@ -205,9 +215,29 @@ public class HelloWorld : MonoBehaviour
          }*/
         if (messageConfront != textValue)
         {
+            
+            RobotNormal1.gameObject.SetActive(false);
+
+            MIMG.PanelAppare();
+            //MIMG.PanelScomparee();
+
             Debug.Log("SONO ENTRTO>");
             ButtonClick();
             messageConfront = textValue;
+           
+        }
+        if (audioSource.isPlaying)
+        {
+            tempoBarra = timer;
+        }
+        if (!audioSource.isPlaying)
+        {
+            if (timer - tempoBarra > 1 && contoschifo >= 2 && IR.FinishFlag()==false)
+            {
+                
+                RobotNormal1.gameObject.SetActive(true);
+                MIMG.PanelScomparee();
+            }
         }
 
         // }
