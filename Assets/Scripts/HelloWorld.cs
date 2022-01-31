@@ -171,7 +171,7 @@ public class HelloWorld : MonoBehaviour
 
         // Creates an instance of a speech config with specified subscription key and service region.
         // Replace with your own subscription key and service region (e.g., "westus").
-        speechConfig = SpeechConfig.FromSubscription("8db17ebaef2b4b34b874ade5ccb4a3d4", "westeurope");
+        speechConfig = SpeechConfig.FromSubscription("2770648cd1214b979cfde95be9931e19", "westeurope");
 
         // The default format is Riff16Khz16BitMonoPcm.
         // We are playing the audio in memory as audio clip, which doesn't require riff header.

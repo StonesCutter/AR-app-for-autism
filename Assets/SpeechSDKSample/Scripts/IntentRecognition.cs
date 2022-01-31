@@ -196,8 +196,8 @@ public class IntentRecognition : MonoBehaviour {
         // Use the inspector fields to manually set these values with your subscription info.
         // If you prefer to manually set your LUIS AppId, Key and Region in code,
         // then uncomment the three lines below and set the values to your own.
-        LUISAppId = "7b067b7f-39b0-4d42-ba5b-ca770a73ad6a";
-        LUISAppKey = "b0c7e37ef0a94996a8a00a4523a81395";
+        LUISAppId = "57a4fdc6-b228-437f-a59e-9c493fc48ee1";
+        LUISAppKey = "092b8d29de294b6b9b29c26f50723356";
         LUISRegion = "westeurope";
 
     }
@@ -462,7 +462,7 @@ public class IntentRecognition : MonoBehaviour {
                 //Debug.Log("TIMER ------>" + timer);
 
                 // IN CASO DI SILENZIO ------------ SSSSSSSSSSSSHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH ------------------------------------
-                if (timer > 15) //&& phraseToSay!=phraseConfront)
+                if (timer > 15 && Finish==false) //&& phraseToSay!=phraseConfront)
                 {
                     switch (actualTask)
                     {
@@ -481,7 +481,7 @@ public class IntentRecognition : MonoBehaviour {
                         case "metroSign":
 
                             if (counter == 0) {
-                                phraseToSay = "Try to focus, you have to find the red metro sign and target it with your phone. Can you do it?";
+                                phraseToSay = "Try to focus, you have to find the red metro sign and target it with your phone. Did you do it?";
                                 counter++;
                                 timer = 0;
                                 MIMG.buttonMetroSignTrue();
@@ -552,7 +552,7 @@ public class IntentRecognition : MonoBehaviour {
                         case "findTicketMachine":
                             if (counter == 0)
                             {
-                                phraseToSay = "Try to focus, you have to find the ticket machine and target it with your phone. Can you do it?";
+                                phraseToSay = "Try to focus, you have to find the ticket machine and target it with your phone. Did you do it?";
                                 counter++;
                                 timer = 0;
                                 tardFlag = false;
@@ -620,7 +620,7 @@ public class IntentRecognition : MonoBehaviour {
                             if (counter == 0)
                             {
                                 MIMG.buttonTurnstileTrue();
-                                phraseToSay = "Try to focus, you have to find the turnstile and target it with your phone. Can you do it?";
+                                phraseToSay = "Try to focus, you have to find the turnstile and target it with your phone. Did you do it?";
                                 counter++;
                                 timer = 0;
                                 tardFlag = false;
@@ -659,7 +659,7 @@ public class IntentRecognition : MonoBehaviour {
                         case "autoStairs":
                             if (counter == 0)
                             {
-                                phraseToSay = "You have to use the ticket following the arrows and then find the stairs and follow the arrow hanged above in order to reach the correct train, can you do it?";
+                                phraseToSay = "You have to use the ticket following the arrows and then find the stairs and follow the arrow hanged above in order to reach the correct train, did you do it?";
                                 counter++;
                                 timer = 0;
                                 tardFlag = false;
@@ -963,7 +963,7 @@ public class IntentRecognition : MonoBehaviour {
                     switch (actualTask)
                     {
                         case "intro":
-                            phraseToSay = "If you need assistance, just say 'Help'. Now frame the metro sign with your phone. Can you see it?";
+                            phraseToSay = "If you need assistance, just say 'Help'. Now frame the metro sign with your phone. Do you see it?";
                             actualTask = "metroSign";
                             timer = 0f;
                             break;
@@ -1142,7 +1142,7 @@ public class IntentRecognition : MonoBehaviour {
                     switch (actualTask)
                     {
                         case "intro":
-                            phraseToSay = "I am your personal assistant, i'm going to guide you through this experience. If you need assistance just say 'Help'. Now frame the metro sign with your phone. Can you see it?";
+                            phraseToSay = "I am your personal assistant, i'm going to guide you through this experience. If you need assistance just say 'Help'. Now frame the metro sign with your phone. Do you see it?";
                             actualTask = "metroSign";
                             break;
                         case "metroSign":
