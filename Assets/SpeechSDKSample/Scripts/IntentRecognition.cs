@@ -199,7 +199,10 @@ public class IntentRecognition : MonoBehaviour {
         LUISAppId = "57a4fdc6-b228-437f-a59e-9c493fc48ee1";
         LUISAppKey = "092b8d29de294b6b9b29c26f50723356";
         LUISRegion = "westeurope";
-
+/*                LUISAppId = "7b067b7f-39b0-4d42-ba5b-ca770a73ad6a";
+                LUISAppKey = "b0c7e37ef0a94996a8a00a4523a81395";
+                LUISRegion = "westeurope";
+*/
     }
 
     // Use this for initialization
